@@ -1,1 +1,1 @@
-# staff-learning-assistant-api
+# staff-learning-assistant-node-api
