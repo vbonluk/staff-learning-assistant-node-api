@@ -11,7 +11,9 @@
   "author": "simon.w.lu",
   "license": "ISC",
   "dependencies": {
+    "@zilliz/milvus2-sdk-node": "^2.2.15",
     "body-parser": "^1.20.2",
+    "cheerio": "^1.0.0-rc.12",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",

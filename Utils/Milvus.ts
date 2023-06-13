@@ -53,28 +53,8 @@ const allFields = [
     },
 ];
 
-async function generateData() {
-    const data = JSON.parse(fs.readFileSync("./src/Static/pg.json", "utf8"));
-    // console.log(data)
-    const results = [];
-    for (const item of data.essays) {
+async function createCollection() {
 
-    }
-    // const content = item.content.trim()
-    // const content = data.essays[0].content.trim()
-    // const embeddingsJson = await GPTApi.gptEmbeddings(content)
-    // const embedding = embeddingsJson.data[0].embedding;
-    // const field = {
-    //     title: item.title,
-    //     url: item.url,
-    //     date: item.date,
-    //     content: item.content,
-    //     length: item.length,
-    //     tokens: item.tokens,
-    //     embedding: item.embedding,
-    // }
-    // results.push(field)
-    // console.log(results[0])
 }
 
-generateData()
+createCollection()

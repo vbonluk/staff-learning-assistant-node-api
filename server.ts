@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from 'express'
-import * as GPTApi from './Azure/OpenAI/GPTApi'
 const bodyParser = require('body-parser');
+import * as GPTApi from './Azure/OpenAI/GPTApi'
+import * as Scrape from './Scrape/Scrape'
 
 const app: Express = express()
 const port = 3008
@@ -24,6 +25,7 @@ async function embeddings() {
         res.send(embeddingsJson)
     })
 }
+
 async function completions() {
     app.post('/chat/completions', async (req: Request, res: Response) => {
         console.log(req.body)
@@ -32,10 +34,19 @@ async function completions() {
     })
 }
 
+async function scrape() {
+    app.post('/scrape', async (req: Request, res: Response) => {
+        console.log(req.body)
+        const result = await Scrape.scrape(req.body.url)
+        res.send(result)
+    })
+}
+
 function apiBuilder() {
     index()
     embeddings()
     completions()
+    scrape()
 }
 
 function serverSetup() {
